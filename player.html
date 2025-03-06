@@ -1,50 +1,81 @@
-<head>
+<html>
 <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
 <style>
 body {
-    font-family: 'Caveat';font-size: 22px;
+    font-family: 'Caveat';font-size: 16pt; color:white;
 }
+        #playlist li a {
+            color: white; /* Cambia il colore dei link */
+            text-decoration: none; /*Rimuove la sottolineatura*/
+        }
+
+        #playlist li a:visited {
+            color: purple; /* Cambia il colore dei link visitati */
+        }
+
+        #playlist li a:hover {
+            color: red; /* Cambia il colore al passaggio del mouse */
+        }
+	.audio-container {
+            display: inline-block; /* Per contenere audio e bottone */
+        }
 </style>
+<head>
+  <title>Lettore MP3 Playlist</title>
+  <p style="font-family:'Caveat'; color:white"><u>Ascolta:</u></p>
 </head>
-<p style="font-family:'Caveat'; color:white"><u>Ascolta:</u></p>
-<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
-1) Intro:
-</div>
-<div style="height: 25px; width: 70%; float:right;">
-<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/01%20Intro.mp3" type="audio/mp3"></audio>
-</div>
-<br>
-<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
-2) Nobile Spartaco:
-</div>
-<div style="height: 25px; width: 70%; float:right;">
-<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/02%20Nobile%20Spartaco.mp3" type="audio/mp3"></audio>
-</div>
-<br>
-<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
-3) Al Passo:
-</div>
-<div style="height: 25px; width: 70%; float:right;">
-<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/03%20Al%20Passo.mp3" type="audio/mp3"></audio>
-</div>
-<br>
-<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
-14 Prugna:
-</div>
-<div style="height: 25px; width: 70%; float:right;">
-<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/04%20Prugna.mp3" type="audio/mp3"></audio>
-</div>
-<br>
-<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
-5) Nuvola Nera:
-</div>
-<div style="height: 25px; width: 70%; float:right;">
-<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/05%20Nuvola%20Nera.mp3" type="audio/mp3"></audio>
-</div>
-<br>
-<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
-6) Alla Lotta Di Classe Chi Ci Pensa?:
-</div>
-<div style="height: 25px; width: 70%; float:right;">
-<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/06%20Alla%20Lotta%20di%20Classe%20Chi%20Ci%20Pensa_%20(cover).mp3" type="audio/mp3"></audio>
-</div>
+<body>
+    <audio id="audioPlayer" style="height: 25px; width: 100%;" controls></audio>
+    <ul id="playlist">
+        <li><a href="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/01%20Intro.mp3">Intro</a></li>
+        <li><a href="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/02%20Nobile%20Spartaco.mp3">Nobile Spartaco</a></li>
+        <li><a href="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/03%20Al%20Passo.mp3">Al Passo</a></li>
+	<li><a href="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/04%20Prugna.mp3">Prugna</a></li>
+	<li><a href="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/05%20Nuvola%20Nera.mp3">Nuvola Nera</a></li>
+	<li><a href="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/06%20Alla%20Lotta%20di%20Classe%20Chi%20Ci%20Pensa_%20(cover).mp3">Alla Lotta Di Classe Chi Ci Pensa?</a></li>
+    </ul>
+    <button id="nextButton">Prossima Traccia</button>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playlist = document.getElementById('playlist');
+        const songs = playlist.getElementsByTagName('li');
+        const nextButton = document.getElementById('nextButton');
+        let currentSong = 0;
+
+        function playSong(songIndex) {
+            const songUrl = songs[songIndex].querySelector('a').getAttribute('href');
+            audioPlayer.src = songUrl;
+            audioPlayer.play();
+            currentSong = songIndex;
+        }
+
+        playlist.addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                event.preventDefault();
+                const songIndex = Array.from(songs).indexOf(event.target.parentElement);
+                playSong(songIndex);
+            }
+        });
+
+      audioPlayer.addEventListener('ended', function() {
+	  nextSong();
+        });
+
+        function nextSong() {
+            currentSong++;
+            if (currentSong < songs.length) {
+                playSong(currentSong);
+            } else {
+                currentSong = 0;
+                playSong(currentSong); // Riproduci di nuovo la prima canzone
+            }
+        }
+      
+	nextButton.addEventListener('click', nextSong);
+      
+        // Riproduci la prima canzone all'avvio
+        playSong(0);
+    </script>
+</body>
+</html>
