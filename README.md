@@ -1,27 +1,52 @@
 ```
+<head>
+<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Caveat';font-size: 22px;
+}
+</style>
+</head>
+<p style="font-family:'Caveat'; color:white"><u>Ascolta:</u></p>
+<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
+1) Intro:
+</div>
+<div style="height: 25px; width: 70%; float:right;">
+<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/01%20Intro.mp3" type="audio/mp3"></audio>
+</div>
 <br>
+<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
+2) Nobile Spartaco:
+</div>
+<div style="height: 25px; width: 70%; float:right;">
+<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/02%20Nobile%20Spartaco.mp3" type="audio/mp3"></audio>
+</div>
 <br>
-<audio style="height: 25px; width: 100%;" controls="controls">
-<source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/01%20Intro.mp3" type="audio/mp3">
-</audio>
-<br><br>
-<audio style="height: 25px; width: 100%;" controls="controls">
-<source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/02%20Nobile%20Spartaco.mp3" type="audio/mp3">
-</audio>
-<br><br>
-<audio style="height: 25px; width: 100%;" controls="controls">
-<source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/03%20Al%20Passo.mp3" type="audio/mp3">
-</audio>
-<br><br>
-<audio style="height: 25px; width: 100%;" controls="controls">
-<source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/04%20Prugna.mp3" type="audio/mp3">
-</audio>
-<br><br>
-<audio style="height: 25px; width: 100%;" controls="controls">
-<source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/05%20Nuvola%20Nera.mp3" type="audio/mp3">
-</audio>
-<br><br>
-<audio style="height: 25px; width: 100%;" controls="controls">
-<source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/06%20Alla%20Lotta%20di%20Classe%20Chi%20Ci%20Pensa_%20(cover).mp3" type="audio/mp3">
-</audio>
+<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
+3) Al Passo:
+</div>
+<div style="height: 25px; width: 70%; float:right;">
+<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/03%20Al%20Passo.mp3" type="audio/mp3"></audio>
+</div>
+<br>
+<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
+14 Prugna:
+</div>
+<div style="height: 25px; width: 70%; float:right;">
+<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/04%20Prugna.mp3" type="audio/mp3"></audio>
+</div>
+<br>
+<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
+5) Nuvola Nera:
+</div>
+<div style="height: 25px; width: 70%; float:right;">
+<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/05%20Nuvola%20Nera.mp3" type="audio/mp3"></audio>
+</div>
+<br>
+<div style="font-family:'Caveat'; color:white; float:left; width:30%;">
+6) Alla Lotta Di Classe Chi Ci Pensa?:
+</div>
+<div style="height: 25px; width: 70%; float:right;">
+<audio style="height: 25px; width: 100%;" controls="controls"><source src="https://github.com/bozzochet/cdbd/raw/refs/heads/master/Demo2/06%20Alla%20Lotta%20di%20Classe%20Chi%20Ci%20Pensa_%20(cover).mp3" type="audio/mp3"></audio>
+</div>
 ```
